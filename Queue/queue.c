@@ -72,7 +72,13 @@ int printQueue(Queue Aqueue) {
  *   * Return the number of nodes in the queue.
  *    ***************************************************/
 int queueSize(Queue Aqueue) {
-    return 0;
+  int count = 0;
+  Node* current = Aqueue.head;
+  while (current != NULL){
+    count++;
+  }
+
+  return count;
 }
 
 
