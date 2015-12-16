@@ -1,11 +1,12 @@
 /* This is the shell you must fill in or replace in order to complete
    this project.  Do not forget to include your name in the initial
    comments in this file.
+ * Copyright 2015 Philip Ross, Benedict Wong
 */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "/queue.h"
+#include "./queue.h"
 
 /****************************************************
  *  * Function: deleteQueue

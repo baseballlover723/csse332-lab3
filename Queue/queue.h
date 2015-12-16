@@ -6,9 +6,9 @@
  * This header file defines the structure of a queue to be used potentially 
  * with a variety of other projects. It also contains the prototpyes of 
  * functions used to manage the queue implemented in queue.c
+ *
+ * Copyright 2015 Philip Ross, Benedict Wong
 */
-#ifndef QUEUE_QUEUE_H_
-#define QUEUE_QUEUE_H_
 #define FALSE 0
 #define TRUE 1
 
@@ -83,5 +83,4 @@ int queueSize(Queue Aqueue);
  * If the queue is empty, return an item with process id = -1.
  ***************************************************/
 Node dequeue(Queue *Aqueue);
-#endif  // QUEUE_QUEUE_H_
 
