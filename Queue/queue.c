@@ -4,6 +4,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "queue.h"
 
 /****************************************************
@@ -13,6 +14,9 @@
  *     * pointers must each be set to NULL.
  *      ****************************************************/
 void deleteQueue(Queue *Aqueue) {
+  while (queueSize(*Aqueue) > 0){
+    dequeue(Aqueue);
+  }
 
 }
 
@@ -28,6 +32,22 @@ void deleteQueue(Queue *Aqueue) {
  *        ************************************************************/
 Bool enqueue(Queue *Aqueue, int processId, int arrivalTime, 
                      int serviceTime, int remainingTime) {
+  Node newNode;
+
+  newNode.processId = processId;
+  newNode.arrivalTime = arrivalTime;
+  newNode.serviceTime = serviceTime;
+  newNode.remainingTime = remainingTime;
+  newNode.next = NULL;
+
+  if(Aqueue->head == NULL){
+    Aqueue->head = newNode;
+    Aqueue->tail = newNode;
+  }
+  else{
+    Aqueue->tail->next = newNode;
+    Aqueue->tail = newNode;
+  }
 
     return FALSE;
 }
