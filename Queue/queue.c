@@ -12,6 +12,11 @@
  *     * pointers must each be set to NULL.
  *      ****************************************************/
 void deleteQueue(Queue *Aqueue) {
+  while (queueSize(Aqueue) > 0){
+    Node node = dequeue(Aqueue);
+    free(node);
+    node = NULL;
+  }
 
 }
 
@@ -27,6 +32,22 @@ void deleteQueue(Queue *Aqueue) {
  *        ************************************************************/
 Bool enqueue(Queue *Aqueue, int processId, int arrivalTime, 
                      int serviceTime, int remainingTime) {
+  Node *newNode = (Node*) malloc(sizeof(Node));
+
+  newNode.processId = processId;
+  newNode.arrivalTime = arrivalTime;
+  newNode.serviceTime = serviceTime;
+  newNode.remainingTime = remainingTime;
+  newNode.next = null;
+
+  if(Aqueue.head == NULL){
+    Aqueue.head = newNode;
+    Aqueue.tail = newNode;
+  }
+  else{
+    Aqueue.tail.next = newNode;
+    Aqueue.tail = newNode;
+  }
 
     return FALSE;
 }
