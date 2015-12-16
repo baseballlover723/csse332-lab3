@@ -65,6 +65,6 @@ int queueSize(Queue Aqueue) {
  *        * If the queue is empty, return an item with process id = -1.
  *         ***************************************************/
 Node dequeue(Queue *Aqueue) {
-  return (Node*) malloc(1 * sizeof(Node));
+  return *Aqueue->head;
 }  
 
