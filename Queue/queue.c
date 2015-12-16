@@ -62,7 +62,14 @@ Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
  *     * Return the number of nodes in the queue.
  *      ***************************************************/
 int printQueue(Queue Aqueue) {
-    return 0;
+    int count = 0;
+    Node* current = Aqueue.head;
+    while (current != NULL) {
+        printf("%d\t%d\t%d\t%d\t", current->processId, current->arrivalTime,
+                current->serviceTime, current->remainingTime);
+        count++;
+    }
+    return count;
 }
 
 
@@ -76,6 +83,7 @@ int queueSize(Queue Aqueue) {
   Node* current = Aqueue.head;
   while (current != NULL){
     count++;
+    current = current->next;
   }
 
   return count;
