@@ -90,7 +90,9 @@ Node dequeue(Queue *Aqueue) {
         Node* returnNode = (Node*) malloc(sizeof(Node));
         returnNode->processId = -1;
         return *returnNode;
-    } 
-    return *Aqueue->head;
+    }
+    Node* returnNode = Aqueue->head;
+    Aqueue->head = returnNode->next;
+    return *returnNode;
 }  
 
