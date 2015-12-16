@@ -7,23 +7,24 @@
  * with a variety of other projects. It also contains the prototpyes of 
  * functions used to manage the queue implemented in queue.c
 */
-
+#ifndef QUEUE_QUEUE_H_
+#define QUEUE_QUEUE_H_
 #define FALSE 0
 #define TRUE 1
 
 typedef int Bool;
 
 
-typedef struct Node{
+typedef struct Node {
   int processId;
   int arrivalTime;
   int serviceTime;
   int remainingTime;
-  struct Node* next; 
+  struct Node* next;
 } Node;
 
 
-typedef struct queue{
+typedef struct queue {
   Node *head;
   Node *tail;
 } Queue;
@@ -37,7 +38,7 @@ typedef struct queue{
  * space allocated to each node. The head and tail 
  * pointers must each be set to NULL.
  ****************************************************/
-void deleteQueue(Queue *Aqueue);  
+void deleteQueue(Queue *Aqueue);
 
 
 
@@ -49,7 +50,7 @@ void deleteQueue(Queue *Aqueue);
  * the node at the start of the queue. 
  * Return TRUE if successful, FALSE otherwise.
  ************************************************************/
-Bool enqueue(Queue *Aqueue, int processId, int arrivalTime, 
+Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
              int serviceTime, int remainingTime);
 
 
@@ -81,4 +82,6 @@ int queueSize(Queue Aqueue);
  * and tail pointers to NULL.
  * If the queue is empty, return an item with process id = -1.
  ***************************************************/
-Node dequeue(Queue *Aqueue);  
+Node dequeue(Queue *Aqueue);
+#endif  // QUEUE_QUEUE_H_
+

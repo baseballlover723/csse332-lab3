@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "queue.h"
+#include "/queue.h"
 
 /****************************************************
  *  * Function: deleteQueue
@@ -14,7 +14,7 @@
  *     * pointers must each be set to NULL.
  *      ****************************************************/
 void deleteQueue(Queue *Aqueue) {
-  while (queueSize(*Aqueue) > 0){
+  while (queueSize(*Aqueue) > 0) {
     dequeue(Aqueue);
   }
   Aqueue->head = NULL;
@@ -31,7 +31,7 @@ void deleteQueue(Queue *Aqueue) {
  *      * the node at the start of the queue. 
  *       * Return TRUE if successful, FALSE otherwise.
  *        ************************************************************/
-Bool enqueue(Queue *Aqueue, int processId, int arrivalTime, 
+Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
                      int serviceTime, int remainingTime) {
   Node* newNode = (Node*) malloc(sizeof(Node));
 
@@ -41,11 +41,10 @@ Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
   newNode->remainingTime = remainingTime;
   newNode->next = NULL;
 
-  if(Aqueue->head == NULL){
+  if (Aqueue->head == NULL) {
     Aqueue->head = newNode;
     Aqueue->tail = newNode;
-  }
-  else{
+  } else {
     Aqueue->tail->next = newNode;
     Aqueue->tail = newNode;
   }
@@ -66,7 +65,8 @@ int printQueue(Queue Aqueue) {
     printf("Process id\tArrival Time\tService Time\tRemaining Time\n");
     Node* current = Aqueue.head;
     while (current != NULL) {
-        printf("%d\t\t%d\t\t%d\t\t%d\n", current->processId, current->arrivalTime,
+        printf("%d\t\t%d\t\t%d\t\t%d\n",
+                current->processId, current->arrivalTime,
                 current->serviceTime, current->remainingTime);
         count++;
         current = current->next;
@@ -83,7 +83,7 @@ int printQueue(Queue Aqueue) {
 int queueSize(Queue Aqueue) {
   int count = 0;
   Node* current = Aqueue.head;
-  while (current != NULL){
+  while (current != NULL) {
     count++;
     current = current->next;
   }
@@ -115,11 +115,11 @@ Node dequeue(Queue *Aqueue) {
     returnNode.remainingTime = Aqueue->head->remainingTime;
 
     Node* next = Aqueue->head->next;
-    if(Aqueue->head == Aqueue->tail){
+    if (Aqueue->head == Aqueue->tail) {
       Aqueue->tail = NULL;
     }
     free(Aqueue->head);
     Aqueue->head = next;
     return returnNode;
-}  
+}
 
