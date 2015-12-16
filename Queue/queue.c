@@ -63,9 +63,10 @@ Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
  *      ***************************************************/
 int printQueue(Queue Aqueue) {
     int count = 0;
+    printf("Process id\tArrival Time\tService Time\tRemaining Time\n");
     Node* current = Aqueue.head;
     while (current != NULL) {
-        printf("%d\t%d\t%d\t%d\n", current->processId, current->arrivalTime,
+        printf("%d\t\t%d\t\t%d\t\t%d\n", current->processId, current->arrivalTime,
                 current->serviceTime, current->remainingTime);
         count++;
         current = current->next;
@@ -114,6 +115,9 @@ Node dequeue(Queue *Aqueue) {
     returnNode.remainingTime = Aqueue->head->remainingTime;
 
     Node* next = Aqueue->head->next;
+    if(Aqueue->head == Aqueue->tail){
+      Aqueue->tail = NULL;
+    }
     free(Aqueue->head);
     Aqueue->head = next;
     return returnNode;
