@@ -14,12 +14,12 @@
 typedef int Bool;
 
 
-typedef struct node{
+typedef struct Node{
   int processId;
   int arrivalTime;
   int serviceTime;
   int remainingTime;
-  struct node *next; // points to the next node
+  struct Node* next; 
 } Node;
 
 
