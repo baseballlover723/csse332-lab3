@@ -3,6 +3,7 @@
    comments in this file.
 */
 
+#include <stdio.h>
 #include "queue.h"
 
 /****************************************************
@@ -65,6 +66,11 @@ int queueSize(Queue Aqueue) {
  *        * If the queue is empty, return an item with process id = -1.
  *         ***************************************************/
 Node dequeue(Queue *Aqueue) {
-  return *Aqueue->head;
+    if (Aqueue->head == NULL) {
+        Node returnNode;
+        returnNode.processId = -1;
+        return returnNode;
+    } 
+    return *Aqueue->head;
 }  
 
