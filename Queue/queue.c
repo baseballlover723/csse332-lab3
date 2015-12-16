@@ -102,13 +102,20 @@ int queueSize(Queue Aqueue) {
  *        * If the queue is empty, return an item with process id = -1.
  *         ***************************************************/
 Node dequeue(Queue *Aqueue) {
+    Node returnNode;
     if (Aqueue->head == NULL) {
-        Node* returnNode = (Node*) malloc(sizeof(Node));
-        returnNode->processId = -1;
-        return *returnNode;
+        returnNode.processId = -1;
+        return returnNode;
     }
-    Node* returnNode = Aqueue->head;
-    Aqueue->head = returnNode->next;
-    return *returnNode;
+    returnNode = *Aqueue->head;
+    returnNode.processId = Aqueue->head->processId;
+    returnNode.arrivalTime = Aqueue->head->arrivalTime;
+    returnNode.serviceTime = Aqueue->head->serviceTime;
+    returnNode.remainingTime = Aqueue->head->remainingTime;
+
+    Node* next = Aqueue->head->next;
+    free(Aqueue->head);
+    Aqueue->head = next;
+    return returnNode;
 }  
 
