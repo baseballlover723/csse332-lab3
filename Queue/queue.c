@@ -17,7 +17,8 @@ void deleteQueue(Queue *Aqueue) {
   while (queueSize(*Aqueue) > 0){
     dequeue(Aqueue);
   }
-
+  Aqueue->head = NULL;
+  Aqueue->tail = NULL;
 }
 
 
@@ -41,12 +42,12 @@ Bool enqueue(Queue *Aqueue, int processId, int arrivalTime,
   newNode.next = NULL;
 
   if(Aqueue->head == NULL){
-    Aqueue->head = newNode;
-    Aqueue->tail = newNode;
+    Aqueue->head = &newNode;
+    Aqueue->tail = &newNode;
   }
   else{
-    Aqueue->tail->next = newNode;
-    Aqueue->tail = newNode;
+    Aqueue->tail->next = &newNode;
+    Aqueue->tail = &newNode;
   }
 
     return FALSE;
