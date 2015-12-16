@@ -68,6 +68,7 @@ int printQueue(Queue Aqueue) {
         printf("%d\t%d\t%d\t%d\t", current->processId, current->arrivalTime,
                 current->serviceTime, current->remainingTime);
         count++;
+        current = current->next;
     }
     return count;
 }
