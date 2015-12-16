@@ -33,21 +33,21 @@ void deleteQueue(Queue *Aqueue) {
  *        ************************************************************/
 Bool enqueue(Queue *Aqueue, int processId, int arrivalTime, 
                      int serviceTime, int remainingTime) {
-  Node newNode;
+  Node* newNode = (Node*) malloc(sizeof(Node));
 
-  newNode.processId = processId;
-  newNode.arrivalTime = arrivalTime;
-  newNode.serviceTime = serviceTime;
-  newNode.remainingTime = remainingTime;
-  newNode.next = NULL;
+  newNode->processId = processId;
+  newNode->arrivalTime = arrivalTime;
+  newNode->serviceTime = serviceTime;
+  newNode->remainingTime = remainingTime;
+  newNode->next = NULL;
 
   if(Aqueue->head == NULL){
-    Aqueue->head = &newNode;
-    Aqueue->tail = &newNode;
+    Aqueue->head = newNode;
+    Aqueue->tail = newNode;
   }
   else{
-    Aqueue->tail->next = &newNode;
-    Aqueue->tail = &newNode;
+    Aqueue->tail->next = newNode;
+    Aqueue->tail = newNode;
   }
 
     return FALSE;
