@@ -67,9 +67,9 @@ int queueSize(Queue Aqueue) {
  *         ***************************************************/
 Node dequeue(Queue *Aqueue) {
     if (Aqueue->head == NULL) {
-        Node returnNode;
-        returnNode.processId = -1;
-        return returnNode;
+        Node* returnNode = (Node*) malloc(sizeof(Node));
+        returnNode->processId = -1;
+        return *returnNode;
     } 
     return *Aqueue->head;
 }  
