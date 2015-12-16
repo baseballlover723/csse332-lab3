@@ -65,7 +65,7 @@ int printQueue(Queue Aqueue) {
     int count = 0;
     Node* current = Aqueue.head;
     while (current != NULL) {
-        printf("%d\t%d\t%d\t%d\t", current->processId, current->arrivalTime,
+        printf("%d\t%d\t%d\t%d\n", current->processId, current->arrivalTime,
                 current->serviceTime, current->remainingTime);
         count++;
         current = current->next;
