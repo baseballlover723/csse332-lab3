@@ -19,18 +19,29 @@ int main(int argc, char *argv[]){
 
   int numChildrenCreated = 0;
   int index = numChildrenCreated;
+  ProcessInfo* processInfo = (ProcessInfo*) malloc(sizeof(ProcessInfo) * (createNumChildren + 1));
 
   pid_t fork_pid, my_pid;
   int x;
   int i;
 
+  processInfo[0].processId = getpid();
+  gettimeofday(processInfo[0].startTime, NULL);
+
   for(i = 0; i < numChildrenCreated; i++){
     fork_pid = fork();   /* Create a child process */
+    if (fork_pid<0) {    /* Check forked correctly */
+      fprintf(stderr, "Fork failed\n");
+      exit(2);
+    }
     if (fork_pid==0) { /* If the current process is the child process.*/
-    printf("I am the child process.  fork_pid = %d, my_pid = %d\n", 
-           fork_pid, my_pid);
+      printf("I am the child process.  fork_pid = %d, my_pid = %d\n", 
+             fork_pid, my_pid);
+
       // Set index
       index = i;
+      processInfo[index].processId = getpid();
+      gettimeofday(processInfo[index].startTime, NULL);
       break;
     }
     else { /* If the current   process is the parent process. */
@@ -38,12 +49,6 @@ int main(int argc, char *argv[]){
              fork_pid, my_pid);
       
     }
-  }
-  
-  fork_pid = fork();   /* Create a child process */
-  if (fork_pid<0) {
-    fprintf(stderr, "Fork failed\n");
-    exit(2);
   }
 
   my_pid = getpid();
