@@ -9,3 +9,5 @@ typedef struct ProcessInfo {
   struct timeval* startTime;
   struct timeval* endTime;
 } ProcessInfo;
+
+int ReadLineFromFile(FILE* file, char* buffer);
