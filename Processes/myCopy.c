@@ -1,6 +1,7 @@
 /* 
  * A file copy utility program that mimics the LINUX cp command.
  * Author:  Delvin Defoe, Mar 21, 2012.
+ * Copyright 2012 Delvin Defoe, Mar 21, 2012.
  */
 
 #include <stdio.h>
@@ -17,16 +18,15 @@ int WriteToFile(char fileName[], char *buffer, int numCharsToWrite);
 /* Reads file content and stores it in the buffer.
  * Returns the number of characters read.
  */
-int ReadFromFile(char fileName[], char *buffer){
-
+int ReadFromFile(char fileName[], char *buffer) {
   FILE *inputFile = fopen(fileName, "r");
-  if (inputFile == NULL){
+  if (inputFile == NULL) {
     fprintf(stderr, "Unable to open the file %s\n", fileName);
     exit(2);
   }
 
   int count = 0;
-  while (!feof(inputFile)){
+  while (!feof(inputFile)) {
     buffer[count] = getc(inputFile);
     count++;
   }
@@ -40,15 +40,14 @@ int ReadFromFile(char fileName[], char *buffer){
 /* Writes numCharsToWrite characters from the buffer to the file. 
  * Returns the number of characters written. 
  */
-int WriteToFile(char fileName[], char *buffer, int numCharsToWrite){
-
+int WriteToFile(char fileName[], char *buffer, int numCharsToWrite) {
   FILE *outFile = fopen(fileName, "w");
-  if(outFile == NULL){
+  if (outFile == NULL) {
     fprintf(stderr, "Unable to open the file %s\n", fileName);
     exit(2);
   }
   int i = 0;
-  for(i = 0; i < numCharsToWrite; i++){
+  for (i = 0; i < numCharsToWrite; i++) {
     putc(buffer[i], outFile);
   }
 
@@ -57,11 +56,10 @@ int WriteToFile(char fileName[], char *buffer, int numCharsToWrite){
 }
 
 /* Runs the file copy utility program. */
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
+  char buffer[MAX_BUFFER_SIZE];
 
-  char buffer[MAX_BUFFER_SIZE]; 
-
-  if (argc != 3){
+  if (argc != 3) {
     fprintf(stderr, "Usage:\n");
     fprintf(stderr, ">>>  ./filecopy <source_file> <destination_file> \n");
     exit(1);

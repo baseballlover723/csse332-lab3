@@ -1,5 +1,6 @@
 /* Use this header file to include function signatures and to declare structure types.
    by <Name>, <Date>
+   Copyright 2016 Phillp Ross, Benedict Wong
 */
 
 #include <sys/time.h>
