@@ -1,0 +1,98 @@
+wongb@ubuntu:~/1.Work/Shared/csse332-lab3/Processes$ ./processes 16 20000 Files.txt
+16
+*************** About to copy file ***************
+Read 16 chars from input file FileOne.txt.
+Copied 16 chars to output file FileOne_out.txt.
+*************** Finish copying file ***************
+Time for process 16 = 2232 microseconds
+15
+*************** About to copy file ***************
+Read 16 chars from input file FileFour.txt.
+Copied 16 chars to output file FileFour_out.txt.
+*************** Finish copying file ***************
+Time for process 15 = 24097 microseconds
+14
+*************** About to copy file ***************
+Read 16 chars from input file FileThree.txt.
+Copied 16 chars to output file FileThree_out.txt.
+*************** Finish copying file ***************
+Time for process 14 = 46544 microseconds
+13
+*************** About to copy file ***************
+Read 16 chars from input file FileTwo.txt.
+Copied 16 chars to output file FileTwo_out.txt.
+*************** Finish copying file ***************
+Time for process 13 = 61768 microseconds
+12
+*************** About to copy file ***************
+Read 16 chars from input file FileOne.txt.
+Copied 16 chars to output file FileOne_out.txt.
+*************** Finish copying file ***************
+Time for process 12 = 83838 microseconds
+11
+*************** About to copy file ***************
+Read 16 chars from input file FileFour.txt.
+Copied 16 chars to output file FileFour_out.txt.
+*************** Finish copying file ***************
+Time for process 11 = 105939 microseconds
+10
+*************** About to copy file ***************
+Read 16 chars from input file FileThree.txt.
+Copied 16 chars to output file FileThree_out.txt.
+*************** Finish copying file ***************
+Time for process 10 = 123755 microseconds
+9
+*************** About to copy file ***************
+Read 16 chars from input file FileTwo.txt.
+Copied 16 chars to output file FileTwo_out.txt.
+*************** Finish copying file ***************
+Time for process 9 = 143051 microseconds
+8
+*************** About to copy file ***************
+Read 16 chars from input file FileOne.txt.
+Copied 16 chars to output file FileOne_out.txt.
+*************** Finish copying file ***************
+Time for process 8 = 166782 microseconds
+7
+*************** About to copy file ***************
+Read 16 chars from input file FileFour.txt.
+Copied 16 chars to output file FileFour_out.txt.
+*************** Finish copying file ***************
+Time for process 7 = 183247 microseconds
+6
+*************** About to copy file ***************
+Read 16 chars from input file FileThree.txt.
+Copied 16 chars to output file FileThree_out.txt.
+*************** Finish copying file ***************
+Time for process 6 = 209398 microseconds
+5
+*************** About to copy file ***************
+Read 16 chars from input file FileTwo.txt.
+Copied 16 chars to output file FileTwo_out.txt.
+*************** Finish copying file ***************
+Time for process 5 = 225038 microseconds
+4
+*************** About to copy file ***************
+Read 16 chars from input file FileOne.txt.
+Copied 16 chars to output file FileOne_out.txt.
+*************** Finish copying file ***************
+Time for process 4 = 250311 microseconds
+3
+*************** About to copy file ***************
+Read 16 chars from input file FileFour.txt.
+Copied 16 chars to output file FileFour_out.txt.
+*************** Finish copying file ***************
+Time for process 3 = 266925 microseconds
+2
+*************** About to copy file ***************
+Read 16 chars from input file FileThree.txt.
+Copied 16 chars to output file FileThree_out.txt.
+*************** Finish copying file ***************
+Time for process 2 = 284258 microseconds
+1
+*************** About to copy file ***************
+Read 16 chars from input file FileTwo.txt.
+Copied 16 chars to output file FileTwo_out.txt.
+*************** Finish copying file ***************
+Time for process 1 = 306284 microseconds
+All children have finished, parent process now exiting. Execution time: 306306 

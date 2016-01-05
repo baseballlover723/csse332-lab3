@@ -1,0 +1,25 @@
+4
+*************** About to copy file ***************
+Read 16 chars from input file FileOne.txt.
+Copied 16 chars to output file FileOne_out.txt.
+*************** Finish copying file ***************
+Time for process 4 = 2559 microseconds
+3
+*************** About to copy file ***************
+Read 16 chars from input file FileFour.txt.
+Copied 16 chars to output file FileFour_out.txt.
+*************** Finish copying file ***************
+Time for process 3 = 56708 microseconds
+2
+*************** About to copy file ***************
+Read 16 chars from input file FileThree.txt.
+Copied 16 chars to output file FileThree_out.txt.
+*************** Finish copying file ***************
+Time for process 2 = 102134 microseconds
+1
+*************** About to copy file ***************
+Read 16 chars from input file FileTwo.txt.
+Copied 16 chars to output file FileTwo_out.txt.
+*************** Finish copying file ***************
+Time for process 1 = 156456 microseconds
+All children have finished, parent process now exiting. Execution time: 156498 

@@ -1,6 +1,6 @@
 /* This is where you implement the core solution.
    by <Name>, <Date>
-   Copyright 2016 Phillp Ross, Benedict WOng
+   Copyright 2016 Phillp Ross, Benedict Wong
 */
 
 #include <stdio.h>
