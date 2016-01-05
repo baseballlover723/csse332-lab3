@@ -11,4 +11,4 @@ typedef struct ProcessInfo {
 } ProcessInfo;
 
 int ReadLineFromFile(FILE* file, char* buffer);
-int64_t timevaldiff(struct timeval starttime, struct timeval finishtime);
+int64_t getElapsedTime(struct timeval *start, struct timeval *end);
