@@ -72,14 +72,13 @@ int main(int argc, char *argv[]){
         line++;
       }
       fclose(inFile);
-
-      char* outputName = buffer;
-      outputName = strncpy(outputName, buffer, strlen(buffer)-4);
+        char* outputName = malloc(strlen(buffer) + 4);
+      strncpy(outputName, buffer, strlen(buffer)-5);
       char* ending = "_out.txt";
       // strncpy(outputName + strlen(buffer)-4, ending, strlen(ending));
-      outputName = strcat(outputName, ending);
+      strcat(outputName, ending);
 
-      printf("%s\n", outputName);
+      printf("*%s*\n", outputName);
 
       // execl("./myCopy", buffer, outputName);
 
